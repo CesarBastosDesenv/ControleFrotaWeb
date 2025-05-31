@@ -12,6 +12,7 @@ import { EditarOSComponent } from './pages/ordensServicos/editar-os/editar-os.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { CadastrarVeiculoComponent } from './pages/veiculos/cadastrar-veiculo/cadastrar-veiculo.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { CommonModule } from '@angular/common';
     CadastrarOSComponent,
     VisualizarOSComponent,
     EditarOSComponent,
+    CadastrarVeiculoComponent,
     
   ],
   imports: [
