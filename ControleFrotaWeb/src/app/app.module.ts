@@ -9,6 +9,9 @@ import { VeiculosComponent } from './pages/veiculos/veiculos.component';
 import { CadastrarOSComponent } from './pages/ordensServicos/cadastrar-os/cadastrar-os.component';
 import { VisualizarOSComponent } from './pages/ordensServicos/visualizar-os/visualizar-os.component';
 import { EditarOSComponent } from './pages/ordensServicos/editar-os/editar-os.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -24,7 +27,11 @@ import { EditarOSComponent } from './pages/ordensServicos/editar-os/editar-os.co
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    CommonModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,20 +4,29 @@
     <table class="table table-borderless">
         <thead>
           <tr>
-            <th scope="col"> Manutenções </th>
-            <th scope="col"> Veículo </th>
+            <th class="col-1" > Manutenções </th>
+            <th class="col-11"> Veículo </th>
             
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">
+          <tr *ngFor="let item of listaVeiculos">
+            <th class="text-center">
                 <a href="/VisualizarOS" class="btn btn-outline-secondary btn-sm">
-                    <fa-icon style="font-size: 22px;" [icon] ="faListCheck"></fa-icon>
+                    <fa-icon  [icon] ="faListCheck"></fa-icon>
                 </a>
             </th>
-            <td>Ford Fiesta 07</td>
+            <td>{{item.veiculoNome}}</td>
           </tr>
         </tbody>
       </table>
+      <ngb-pagination 
+                [collectionSize]="TotalLista"
+                (pageChange)="pageChange($event)"
+                [maxSize]="5"
+                [rotate]="true"
+                [ellipses]="false"
+                [pageSize]="PageSize"
+                [boundaryLinks]="true">
+              </ngb-pagination>
 </div>
