@@ -39,6 +39,8 @@ export class VeiculosComponent implements OnInit {
     })
   }
 
+  
+
   ngOnInit(): void { 
    this.listarVeiculos();
     }

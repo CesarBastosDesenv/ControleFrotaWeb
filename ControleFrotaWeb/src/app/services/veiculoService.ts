@@ -47,4 +47,17 @@ export class veiculoService{
         });
     }
 
+    public ListarVeiculoPorId(id: any): Observable<any> {
+                 
+            return this.httpClient.get(this.apiUrl + '/' + id)
+            .pipe(
+                map(response => {
+                    return response;
+                })
+            );
+            
+                      
+        
+    }
+
     }

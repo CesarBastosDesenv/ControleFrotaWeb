@@ -1,1 +1,106 @@
-<p>editar-os works!</p>
+<div class="shadow-lg p-3 mb-5 my-3 bg-white rounded">
+    <div class="row">
+        <div class="col-sm-8"> 
+            <h3> Ordem de serviço número XXXXX </h3>
+        </div>
+        <div class="col-sm-4 ">
+            <div class="float-right">
+                <a href="/CadastrarOs" class="btn btn-outline-secondary btn-sm">
+                    <fa-icon style="font-size: 22px;" [icon] ="faPlusCircle"></fa-icon> Cadastrar OS
+                </a>
+            </div>    
+        </div>
+        <div class="shadow p-3 mb-5 my-4 bg-white rounded">
+            <h5>Dados Da Ordem de serviço</h5>
+            <div class="row">
+        
+                <form class="form"   > 
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <label >Veículo</label>
+                      <input type="text"  class="form-control" formControlName="veiculoNome" >
+                    </div>
+                    <div class="col-sm-3">
+                        <label >Data do serviço</label>
+                        <input type="date"  class="form-control" formControlName="DtServiço" >
+                    </div>
+                    <div class="col-sm-3">
+                        <label >Tipo da Manutenção</label>
+                        <input type="text"  class="form-control" formControlName="TipoManutencao" >
+                    </div>
+                    <div class="col-sm-3">
+                        <label >Executor</label>
+                        <input type="text"  class="form-control" formControlName="Executor" >
+                    </div>
+                    <div class="col-sm-3">
+                        <label >Valor mão de obra</label>
+                        <input type="text"  class="form-control" formControlName="ValorMaoObra" >
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="exampleFormControlSelect1">Status</label>
+                        <select class="form-control" formControlName="Status" >
+                          <option>Aberto</option>
+                          <option>Fechado</option>
+                        </select>
+                      </div>
+                   
+                    <div class="row">
+                       <div class="col-sm-3 my-4">
+                          <button type="submit" class="btn btn-outline-secondary form-control">Salvar</button>  
+                      </div>
+                    </div>
+                  </div> 
+                </form>
+              </div>
+        </div>
+        <div class="shadow p-3 mb-5 bg-white rounded">
+            <h5>Peças trocadas</h5>
+            <form class="form"   > 
+                <div class="row">
+                  <div class="col-sm-10">
+                    <label >Peça</label>
+                    <input type="text"  class="form-control" formControlName="veiculoNome" >
+                  </div>
+                 
+                     <div class="col-sm-2">
+                        <label class="text-white">.</label>
+                        <button type="submit" class="btn btn-outline-secondary form-control">Incuir Peça</button>  
+                     
+                  </div>
+                </div> 
+              </form>
+              <table class="table table-striped my-2">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Primeiro</th>
+                    <th scope="col">Último</th>
+                    <th scope="col">Nickname</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>gf</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>fg</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>fg</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        
+
+    </div>
+</div>    
