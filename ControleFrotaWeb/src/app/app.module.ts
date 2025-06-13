@@ -10,7 +10,7 @@ import { VisualizarOSComponent } from './pages/ordensServicos/visualizar-os/visu
 import { EditarOSComponent } from './pages/ordensServicos/editar-os/editar-os.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { CadastrarVeiculoComponent } from './pages/veiculos/cadastrar-veiculo/cadastrar-veiculo.component';
 
 
@@ -33,6 +33,8 @@ import { CadastrarVeiculoComponent } from './pages/veiculos/cadastrar-veiculo/ca
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    CommonModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

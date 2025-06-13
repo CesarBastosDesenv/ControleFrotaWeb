@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: VeiculosComponent },
   { path: 'VisualizarOS/:id', component: VisualizarOSComponent},
   { path: 'CadastrarVeiculo', component: CadastrarVeiculoComponent},
-  { path: 'CadastrarOs', component: CadastrarOSComponent},
+  { path: 'CadastrarOs/:id', component: CadastrarOSComponent},
   { path: 'EditarOs/:id', component: EditarOSComponent},
   { path: '**', component: VeiculosComponent}
 ];

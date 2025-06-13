@@ -5,8 +5,8 @@
         </div>
         <div class="col-sm-4 ">
             <div class="float-right">
-                <a href="/CadastrarOs" class="btn btn-outline-secondary btn-sm">
-                    <fa-icon style="font-size: 22px;" [icon] ="faPlusCircle"></fa-icon> Cadastrar OS
+                <a href="/CadastrarOs/{{listaVeiculosPorId.id}}" class="btn btn-outline-secondary btn-sm">
+                    <fa-icon style="font-size: 18px;" [icon] ="faPlusCircle"></fa-icon> Cadastrar OS
                 </a>
             </div>    
         </div>
@@ -17,37 +17,55 @@
         <thead>
           <tr>
             <th scope="col"> Ações </th>
-            <th scope="col"> Ordem </th>
+            <th scope="col"> Situação </th>
             <th scope="col"> Data </th>
+            <th scope="col"> Serviço Executado </th>
             <th scope="col"> Tipo </th>
-            <th scope="col"> Veículo </th>
+            <th scope="col"> Valor da Ordem </th>
             
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let item of listaOrdemServicoPorVeiculo">
             <th scope="row">
-                <a href="/EditarOs/{{id}}" class="btn btn-outline-secondary btn-sm">
-                    editar
+                <a href="/EditarOs/{{item.id}}" class="btn btn-outline-secondary btn-sm">
+                  <fa-icon style="font-size: 15px;" [icon] ="faNavicon"></fa-icon>
                 </a>
             </th>
-            <td>Ford Fiesta 07</td>
-            <td>Ford Fiesta 07</td>
-            <td><span class="badge badge-warning"><b>PREVENTIVA</b></span></td>
-            <td>Ford Fiesta 07</td>
-          </tr>
-          <tr>
-            <th scope="row">
-                <a href="/VisualizarOS" class="btn btn-outline-secondary btn-sm">
-                    editar
-                </a>
-            </th>
-            <td>Ford Fiesta 07</td>
-            <td>Ford Fiesta 07</td>
-            <td>Ford Fiesta 07</td>
-            <td>Ford Fiesta 07</td>
+            <td>
+              <span [class]="item.status == true?'badge badge-success':'badge badge-danger'">{{item.status == true?'ABERTA':'CONCLUÍDA'}}</span>
+            </td>
+            <td>{{item.dtServico | date: 'dd/MM/yyyy' }}</td>
+            <td>{{item.defeitoApresentado}}</td>
+            <td *ngIf="item.tipoManutencao == 'Preventiva'; else elseBlock1">
+              <span class="badge badge-warning"><b>{{item.tipoManutencao}}</b></span>
+            </td>
+            
+            <ng-template #elseBlock1>
+              <td *ngIf="item.tipoManutencao == 'Corretiva'; else elseBlock2">
+                <span class="badge badge-danger"><b>{{item.tipoManutencao}}</b></span>
+              </td>
+            
+              <ng-template #elseBlock2>
+                <td *ngIf="item.tipoManutencao == 'Melhoria'; else elseBlock3">
+                  <span class="badge badge-success"><b>{{item.tipoManutencao}}</b></span>
+                </td>
+              </ng-template>
+            </ng-template>
+            
+             
+            <td>{{item.valorMaoObra | currency: 'BRL' }}</td>
           </tr>
         </tbody>
       </table>
+      <ngb-pagination 
+                [collectionSize]="TotalLista"
+                (pageChange)="pageChange($event)"
+                [maxSize]="5"
+                [rotate]="true"
+                [ellipses]="false"
+                [pageSize]="PageSize"
+                [boundaryLinks]="true">
+              </ngb-pagination>
 </div>
 
